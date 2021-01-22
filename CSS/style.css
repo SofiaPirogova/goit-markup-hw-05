@@ -38,6 +38,9 @@ html {
   --ourteam-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --footer-icons: rgba(255, 255, 255, 0.1);
+  --modal-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  --modal-back: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -139,6 +142,8 @@ body {
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
@@ -266,6 +271,7 @@ body {
 .ourteam-back:hover,
 .ourteam-back:focus {
   filter: var(--drop-shadow);
+  transition-duration: 250ms;
 }
 
 .icon-ul {
@@ -279,6 +285,7 @@ body {
   justify-content: center;
   align-items: center;
   fill: var(--icon-gray);
+  border-radius: 50%;
 }
 
 .icon-social-list:hover,
@@ -286,6 +293,8 @@ body {
   border-radius: 50%;
   background-color: var(--accent-color);
   fill: var(--clean-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-social {
   width: 20px;
@@ -345,6 +354,7 @@ body {
 .gallery-back:focus {
   background-color: var(--clean-color);
   filter: var(--drop-shadow);
+  transition-duration: 250ms;
 }
 .gallery-back:nth-child(3n) {
   margin-right: 0px;
@@ -373,6 +383,7 @@ body {
   border: none;
   margin-bottom: 50px;
   cursor: pointer;
+  outline: none;
 }
 
 .button:hover,
@@ -380,6 +391,8 @@ body {
   color: var(--clean-color);
   background-color: var(--accent-color);
   filter: var(--drop-shadow);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .flex-button {
@@ -405,6 +418,8 @@ body {
 .logo-container:focus {
   fill: var(--accent-color);
   border-color: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* footer */
 .footer {
@@ -446,6 +461,8 @@ body {
 .icon-footer-list:hover,
 .icon-footer-list:focus {
   background-color: var(--accent-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-p {
   font-family: Roboto, sans-serif;
@@ -472,4 +489,43 @@ body {
 }
 .footer-margin {
   margin-left: 70px;
+}
+/* Modal window */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--modal-back);
+
+  opacity: 1;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--clean-color);
+  border-radius: 4px;
+  box-shadow: var(--modal-shadow);
+}
+.modal-close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  outline: none;
 }
