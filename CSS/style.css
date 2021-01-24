@@ -43,6 +43,8 @@ html {
   --modal-back: rgba(0, 0, 0, 0.2);
   --whatwedo-overlay: rgba(47, 48, 58, 0.8);
   --gallery-overlay: rgba(33, 150, 243, 0.9);
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -107,7 +109,7 @@ body {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .contacts:last-child {
   margin-right: 0;
@@ -144,7 +146,7 @@ body {
 
   transition-property: color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .site-nav .link:hover,
@@ -157,11 +159,14 @@ body {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+
 /* link hover line */
 .link-push-line {
   position: relative;
 }
-.link-bottom-line {
+
+.link-push-line::before {
+  content: '';
   position: absolute;
   bottom: -31px;
   width: 100%;
@@ -309,7 +314,7 @@ body {
 
   transition-property: filter;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .ourteam-back:hover,
@@ -333,7 +338,7 @@ body {
 
   transition-property: background-color, fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .icon-social-list:hover,
 .icon-social-list:focus {
@@ -396,7 +401,7 @@ body {
   cursor: pointer;
   transition-property: background-color, filter;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .gallery-back:hover,
@@ -436,7 +441,7 @@ body {
   background-color: var(--gallery-overlay);
 
   transform: translateY(294px);
-  transition: transform 250ms linear;
+  transition: transform 250ms var(--timing-function);
 }
 .main-img-gallery:hover .overlay-gallery {
   transform: translateY(0px);
@@ -461,7 +466,7 @@ body {
 
   transition-property: color, background-color, filter;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 
 .button:hover,
@@ -493,7 +498,7 @@ body {
 
   transition-property: fill, border-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .logo-container:hover,
 .logo-container:focus {
@@ -540,7 +545,7 @@ body {
 
   transition-property: background-color;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: var(--timing-function);
 }
 .icon-footer-list:hover,
 .icon-footer-list:focus {
