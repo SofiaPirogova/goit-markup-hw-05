@@ -434,7 +434,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.overlay-gallery {
+/* .overlay-gallery {
   position: absolute;
   top: 0;
   left: 0;
@@ -454,6 +454,24 @@ body {
 }
 .main-img-gallery:hover .overlay-gallery {
   transform: translateY(0px);
+} */
+.overlay-gallery {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  bottom: -100%;
+  /* зачем использовать боттом, если и без него так же работает? в чем его функция? */
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--clean-color);
+  background-color: var(--gallery-overlay);
+
+  transition: transform var(--time-duration) var(--timing-function);
+}
+.main-img-gallery:hover .overlay-gallery {
+  transform: translateY(-100%);
 }
 /* buttons */
 .button {
