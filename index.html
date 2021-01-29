@@ -30,7 +30,9 @@
           >
           <ul class="site-nav list">
             <li class="space">
-              <a href="./index.html" class="link current">Студия</a>
+              <a href="./index.html" class="link current link-push-line"
+                >Студия</a
+              >
             </li>
             <li class="space">
               <a href="./portfolio.html" class="link">Портфолио</a>
@@ -66,7 +68,7 @@
       <section class="banner">
         <div class="banner-center">
           <h1 class="tagline">Эффективные решения для вашего бизнеса</h1>
-          <a href="" class="order link">Заказать услугу</a>
+          <a href="#" class="order link" data-modal-open>Заказать услугу</a>
         </div>
       </section>
 
@@ -134,29 +136,32 @@
       <section class="container section-whatwedo">
         <h2 class="heading">Чем мы занимаемся</h2>
         <ul class="list flex">
-          <li>
+          <li class="whatwedo-list">
             <a href=""
               ><img
                 src="./images/keyboards.jpg"
                 alt="Печатает на клавиатуре"
                 width="370"
             /></a>
+            <div class="whatwedo-name">Декстопные приложения</div>
           </li>
-          <li>
+          <li class="whatwedo-list">
             <a href=""
               ><img
                 src="./images/lookatthephone.jpg"
                 alt="Смотрит на телефон и на экран"
                 width="370"
             /></a>
+            <div class="whatwedo-name">Мобильные приложения</div>
           </li>
-          <li>
+          <li class="whatwedo-list">
             <a href=""
               ><img
                 src="./images/lookatthepalette.jpg"
                 alt="Смотрит на цветовую палитру"
                 width="370"
             /></a>
+            <div class="whatwedo-name">Дизайнерские решения</div>
           </li>
         </ul>
       </section>
@@ -427,5 +432,13 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="modal-close-button" data-modal-close>
+          <img src="./images/close.png" alt="X" class="png-close-button" />
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
